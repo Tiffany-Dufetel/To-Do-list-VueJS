@@ -1,0 +1,87 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+li {
+  padding-bottom: 5px;
+}
+
+header {
+  text-align: center;
+  height: 70px;
+  background-color: #4aa4c0;
+  color: white;
+  padding: 5px 0px 10px 0px;
+}
+
+.container-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px 0px 40px 0px;
+}
+
+input {
+  width: 450px;
+  padding: 5px 20px 5px 20px;
+  border: 1px solid #4aa4c0;
+}
+
+button.add,
+.button-change-status {
+  background-color: #4aa4c0;
+  border: 1px solid #4aa4c0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+}
+
+button.add:hover,
+.button-change-status:hover {
+  background-color: white;
+  border: 1px solid #4aa4c0;
+  color: #4aa4c0;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container-todo,
+.container-inprogress,
+.container-done {
+  border: 2px solid #4aa4c0;
+  width: 300px;
+  margin: 5px;
+  text-align: center;
+}
+
+h3 {
+  padding-left: 10px;
+  letter-spacing: 4px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.title-todo,
+.title-progress,
+.title-done {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  letter-spacing: 3px;
+  margin: 10px 0px 10px 0px;
+}
+
+.hideTodoList,
+.hideProgress,
+.hideDone {
+  background-color: white;
+  border: 1px solid white;
+  padding-bottom: 10px;
+}

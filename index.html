@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <header>
+            <h1>MA TO-DO LIST</h1><br><br>
+        </header>
+
+        <div class="container-input">
+            <input type="text" @input="inputTask" :value="list" placeholder="-- ajoute ta tâche --" @keyup.enter="addButton">
+            <button @click="addButton" class="add">AJOUTER</button>
+        </div>
+
+        <section id="main-container">
+            <div class="container-todo">
+                <p class="title-todo">A FAIRE</p>
+                <button @click="buttonTodoList = !buttonTodoList" class="hideTodoList">⇵</button>
+                    <div v-show="buttonTodoList">
+                        <ul>
+                            <li v-for="(element,index) in arrayList">
+                                {{index+1}}: {{element}}
+                                <button @click="changeProgress(index)" class="button-change-status">EN COURS</button>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div class="container-inprogress">
+                <p class="title-progress">EN COURS</p>
+                <button @click="buttonProgress = !buttonProgress" class="hideProgress">⇵</button>
+                    <div v-show="buttonProgress">
+                          <ul>
+                            <li v-for="(element,index) in arrayListInProgress">
+                                {{index+1}}: {{element}}
+                                <button @click="changeDone(index)" class="button-change-status">EN COURS</button>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div class="container-done">
+                <p class="title-done">FAIT</p>
+                <button @click="buttonDone = !buttonDone" class="hideDone">⇵</button>
+                    <div v-show="buttonDone">
+                        <ul>
+                            <li v-for="(element,index) in arrayListDone">
+                                {{index+1}}: {{element}}
+                                <button @click="deleteButton" class="button-change-status">SUPPRIMER</button>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+</body>
+</html>
